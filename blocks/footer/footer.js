@@ -1,4 +1,4 @@
-import { decorateIcons } from '../../scripts/lib-franklin.js';
+import { decorateIcons } from '../../scripts/aem.js';
 
 /**
  * loads and decorates the footer
@@ -6,7 +6,7 @@ import { decorateIcons } from '../../scripts/lib-franklin.js';
  */
 
 export default async function decorate(block) {
-  const navPath = window.wknd.demoConfig.demoBase || '';
+  const navPath = window.cfgDemo.demoConfig.demoBase || '';
 
   const resp = await fetch(`${navPath}/footer.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
   if (resp.ok) {

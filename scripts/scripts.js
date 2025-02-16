@@ -154,8 +154,8 @@ async function loadDemoConfig() {
       }
     }
   }
-  window.wknd = window.wknd || {};
-  window.wknd.demoConfig = demoConfig;
+  window.cfgDemo = window.cfgDemo || {};
+  window.cfgDemo.demoConfig = demoConfig;
 }
 
 async function loadPage() {

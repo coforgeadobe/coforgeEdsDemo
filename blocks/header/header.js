@@ -1,4 +1,4 @@
-import { decorateIcons } from '../../scripts/lib-franklin.js';
+import { decorateIcons } from '../../scripts/aem.js';
 
 /**
  * collapses all open nav sections
@@ -18,8 +18,7 @@ function collapseAllNavSections(sections) {
 
 export default async function decorate(block) {
   // fetch nav content
-  const navPath = window.wknd.demoConfig.demoBase || '';
-
+  const navPath = window.cfgDemo.demoConfig.demoBase || '';
   const resp = await fetch(`${navPath}/nav.plain.html`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
   if (resp.ok) {
     const html = await resp.text();
